@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import home
+from app.views import maintenance
 
 urlpatterns = [
-    path('', home, name='home'),
+    path('', maintenance, name='home'),
     path('dlsu_ccinfom/', admin.site.urls),
 ]
