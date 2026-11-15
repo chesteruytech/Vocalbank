@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import RedirectView
+
 from app.views import maintenance
 
 urlpatterns = [
-    path('', maintenance, name='home'),
-    path('dlsu_ccinfom/', admin.site.urls),
+    path('', RedirectView.as_view(url='/app/')),
+    path('app/', maintenance),
+    path('dlsu_ccinfom/', admin.site.urls)
 ]
