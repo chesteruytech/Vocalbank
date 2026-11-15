@@ -18,5 +18,31 @@ from django.urls import path
 from app import views
 
 urlpatterns = [
-    path('', views.maintenance, name='maintenance')
+    # Homepage
+    path('', views.maintenance, name='maintenance'),
+
+    # # Concert Model
+    # path('concerts', views.concert, name='C'),
+    # path('concerts/modify', views.update_concert, name='UC'),
+    # path('concerts/remove', views.delete_concert, name='DC'),
+    #
+    # # Producer Model
+    # path('producers', views.producer, name='P'),
+    # path('producers/modify', views.update_producer, name='UP'),
+    # path('producers/remove', views.delete_producer, name='DP'),
+    #
+    # # Song Model
+    # path('songs', views.song, name='S'),
+    # path('songs/modify', views.update_song, name='US'),
+    # path('songs/remove', views.delete_song, name='DS'),
+    #
+    # # Setlist Model
+    # path('setlist', views.setlist, name='CS'),
+    # path('setlist/modify', views.update_setlist, name='UCS'),
+    # path('setlist/remove', views.delete_setlist, name='DCS'),
+
+    # VOCALOID Model
+    path('vocaloid', views.vocaloid, name='V'),
+    path('vocaloid/modify', views.update_vocaloid, name='UV'),
+    path('vocaloid/remove', views.delete_vocaloid, name='DV')
 ]
