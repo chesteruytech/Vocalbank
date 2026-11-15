@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-j2)l$qyl&uv_u3emm416!j2i_)vtm4u_cw-adlcy116hp62#re'
+SECRET_KEY = '+rj_d)h@$u5$r-&q%x2ls@yuzq*rn0)lr$(7s@^6kvfbif66lv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -51,6 +51,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'vocalbank.urls'
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 TEMPLATES = [
     {
@@ -127,6 +133,9 @@ STATIC_URL = 'static/'
 
 MAILERS = {
     'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend'
+        'BACKEND': 'django.core.mail.backends.smtp.EmailBackend'
     },
+    'console': {
+        'BACKEND': 'django.core.mail.backends.console.EmailBackend'
+    }
 }
