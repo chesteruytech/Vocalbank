@@ -2,13 +2,21 @@ from django.db import models
 from enum import Enum
 
 # Create your models here.
-# class Concert(models.Model):
+class Concert(models.Model):
+    class Meta:
+        db_table = "concert"
 
-# class Producer(models.Model):
+class Producer(models.Model):
+    class Meta:
+        db_table = "producer"
 
-# class Setlist(models.Model):
+class Setlist(models.Model):
+    class Meta:
+        db_table = "setlist"
 
-# class Song(models.Model):
+class Song(models.Model):
+    class Meta:
+        db_table = "song"
 
 class VOCALOIDGender(Enum):
     c = "Chimera"
@@ -23,8 +31,11 @@ class VOCALOID(models.Model):
     releaseDate = models.DateField()
 
     class Gender(models.TextChoices):
-        c = "Chimera"
-        f = "Female"
-        m = "Male"
+        Chimera = "Chimera"
+        Female = "Female"
+        Male = "Male"
 
-    role = models.CharField(choices=Gender.choices, max_length=10)
+    gender = models.CharField(choices=Gender.choices, max_length=10)
+
+    class Meta:
+        db_table = "vocaloid"
