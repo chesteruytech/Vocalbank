@@ -67,6 +67,41 @@ INSERT INTO `vocaloid` VALUES (1,'MEIKO','Crypton Future Media, Inc.','Japanese,
                               (18,'Kaai Yuki','AHS Co., Ltd.','Japanese','2009-12-04','Female');
 /*!40000 ALTER TABLE `vocaloid` ENABLE KEYS */;
 UNLOCK TABLES;
+--
+-- Table structure for table `producer`
+--
+
+DROP TABLE IF EXISTS `song`;
+DROP TABLE IF EXISTS `producer`;
+CREATE TABLE `producer` (
+  `producerid` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `alias` varchar(100) DEFAULT NULL,
+  `country` varchar(50) NOT NULL,
+  `debutyear` year NOT NULL,
+  `isactive` tinyint(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`producerid`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `producer`
+--
+
+LOCK TABLES `producer` WRITE;
+/*!40000 ALTER TABLE `producer` DISABLE KEYS */;
+INSERT INTO `producer` VALUES (1,'wowaka',NULL,'Japan',2009,0),
+                              (2,'DECO*27',NULL,'Japan',2008,1),
+                              (3,'ryo','supercell','Japan',2007,1),
+                              (4,'Hachi','Kenshi Yonezu','Japan',2009,1),
+                              (5,'Kurousa-P','WhiteFlame','Japan',2008,1),
+                              (6,'kz','livetune','Japan',2007,1),
+                              (7,'PinocchioP',NULL,'Japan',2009,1),
+                              (8,'Kikuo',NULL,'Japan',2012,1),
+                              (9,'Mitchie M',NULL,'Japan',2008,1),
+                              (10,'cosMo@Bousou-P','cosMo','Japan',2007,1);
+/*!40000 ALTER TABLE `producer` ENABLE KEYS */;
+UNLOCK TABLES;
+
 SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
